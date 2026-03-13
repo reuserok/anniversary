@@ -8,7 +8,6 @@
 <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
 
 <style>
-
 body{
 margin:0;
 font-family:'Indie Flower', cursive;
@@ -72,12 +71,11 @@ color:#ff4da6;
 margin-bottom:200px;
 }
 
-/* TREE */
+/* TREE CONTAINER */
 
 .treeContainer{
 position:relative;
 width:1100px;
-max-width:95%;
 }
 
 /* TREE TRUNK */
@@ -141,11 +139,28 @@ border-radius:4px;
 transform: rotate(15deg);
 }
 
+/* BRANCH DECORATION */
+
+.branchDecoration{
+position:absolute;
+top:-60px;
+width:260px;
+pointer-events:none;
+opacity:.9;
+}
+
+.branch.left .branchDecoration{
+right:-200px;
+}
+
+.branch.right .branchDecoration{
+left:-200px;
+}
+
 /* PHOTO */
 
 .branch img.photo{
 width:260px;
-max-width:90%;
 border-radius:20px;
 box-shadow:
 0 10px 25px rgba(0,0,0,0.25),
@@ -160,11 +175,15 @@ animation:floatMemory 6s ease-in-out infinite;
 100%{ transform:translateY(0px) rotate(0deg); }
 }
 
+/* TEXT */
+
 .branch p{
 font-size:22px;
 color:#555;
 margin-top:10px;
 }
+
+/* SHOW ANIMATION */
 
 .branch.show{
 opacity:1;
@@ -186,6 +205,15 @@ animation:leafFall linear infinite;
 100%{ transform: translateY(300px) rotate(360deg); }
 }
 
+/* COMING SOON */
+
+#comingSoon{
+font-size:40px;
+color:#0c0c0c;
+text-align:center;
+margin:150px 0;
+}
+
 /* MUSIC PLAYER */
 
 .musicPlayer{
@@ -193,18 +221,18 @@ position:fixed;
 bottom:20px;
 right:20px;
 background:white;
-padding:10px 12px;
+padding:12px 16px;
 border-radius:18px;
 box-shadow:0 5px 20px rgba(0,0,0,0.25);
 display:flex;
 align-items:center;
-gap:8px;
+gap:10px;
 z-index:1000;
-font-size:13px;
+font-size:14px;
 }
 
 .musicPlayer input{
-width:90px;
+width:120px;
 }
 
 .musicPlayer button{
@@ -222,7 +250,7 @@ background:#ff88e1;
 }
 
 .miku{
-width:40px;
+width:45px;
 animation:mikuFloat 3s ease-in-out infinite;
 }
 
@@ -232,51 +260,12 @@ animation:mikuFloat 3s ease-in-out infinite;
 100%{transform:translateY(0)}
 }
 
-/* MOBILE FIX */
-
-@media (max-width:768px){
-
-.titleText{
-font-size:32px;
-}
-
-.titleRow img{
-width:45px;
-}
-
-.branch{
-width:100%;
-left:0 !important;
-text-align:center;
-margin:350px 0;
-}
-
-.branch::before{
-display:none;
-}
-
-.treeContainer::before{
-left:50%;
-}
-
-.branch img.photo{
-width:220px;
-}
-
-.musicPlayer{
-right:10px;
-bottom:10px;
-}
-
-}
-
 </style>
 </head>
 
 <body>
 
 <section id="hero">
-
 <div class="titleRow">
 <img src="hehe.gif">
 <div class="titleText">Happy Anniversary</div>
@@ -284,7 +273,6 @@ bottom:10px;
 </div>
 
 <canvas id="heartCanvas"></canvas>
-
 </section>
 
 <section id="treeSection">
@@ -292,28 +280,80 @@ bottom:10px;
 
 <div class="treeContainer">
 
-<!-- branches unchanged -->
+<div class="branch left">
+<img class="branchDecoration" src="branch2.gif">
+<img class="photo" src="minecraft.png">
+<p>We never beat the ender dragon</p>
+</div>
+
+<div class="branch right">
+<img class="branchDecoration" src="branch2.gif">
+<img class="photo" src="firstdate.png">
+<p>It would’ve been better if I was there with you by myself instead of bringing my friends. we could have hung out longer and just enjoyed being together.</p>
+</div>
+
+<div class="branch left">
+<img class="branchDecoration" src="branch2.gif">
+<img class="photo" src="firstdate2.png">
+<p>WE ATE SO MUCH FOOD, ONG WE ALWAYS GETTING FULL. i was still nervous asf like u didnt know how bad i was shaking</p>
+</div>
+
+<div class="branch right">
+<img class="branchDecoration" src="branch2.gif">
+<img class="photo" src="happy.png">
+<p>Hehe</p>
+</div>
+
+<div class="branch left">
+<img class="branchDecoration" src="branch2.gif">
+<img class="photo" src="us.png">
+<p>AWWWW</p>
+</div>
+
+<div class="branch right">
+<img class="branchDecoration" src="branch2.gif">
+<img class="photo" src="valentines.png">
+<p>❤️ valentines day asked you to be my girlfriend</p>
+</div>
+
+<div class="branch right">
+<img class="branchDecoration" src="branch2.gif">
+<img class="photo" src="seconddate.png">
+<p>we ate Burger King and walked around</p>
+</div>
+
+<div class="branch left">
+<img class="branchDecoration" src="branch2.gif">
+<img class="photo" src="food.png">
+<p>Ramen🍜 we always eating</p>
+</div>
+
+<div class="branch left">
+<img class="branchDecoration" src="branch2.gif">
+<img class="photo" src="thirddate.png">
+<p>WE ALWAYS GETTING FULL</p>
+</div>
+
+<div class="branch right">
+<img class="branchDecoration" src="branch2.gif">
+<img class="photo" src="cutie.png">
+<p>My pretty girl cant wait to spoil u more</p>
+</div>
 
 </div>
 
 <div id="comingSoon">Coming Soon</div>
-
 </section>
 
-<audio id="music" autoplay loop>
+<audio id="music" loop>
 <source src="whenusleep.mp3" type="audio/mpeg">
 </audio>
 
 <div class="musicPlayer">
-
 <img src="miku.gif" class="miku">
-
-<button id="playPause">⏸</button>
-
+<button id="playPause">▶</button>
 <label>Volume</label>
-
 <input type="range" id="volume" min="0" max="1" step="0.01" value="0.5">
-
 </div>
 
 <script>
@@ -326,9 +366,15 @@ const playPause=document.getElementById("playPause")
 
 music.volume=0.5
 
-window.addEventListener("load",()=>{
-music.play().catch(()=>{})
-})
+function startMusic(){
+music.play()
+playPause.textContent="⏸"
+document.removeEventListener("touchstart",startMusic)
+document.removeEventListener("click",startMusic)
+}
+
+document.addEventListener("touchstart",startMusic)
+document.addEventListener("click",startMusic)
 
 volume.addEventListener("input",()=>{
 music.volume=volume.value
@@ -346,13 +392,62 @@ playPause.textContent="▶"
 
 })
 
+/* BRANCH SCROLL */
+
+const branches=document.querySelectorAll(".branch");
+
+window.addEventListener("scroll",()=>{
+const trigger=window.innerHeight*0.65;
+
+branches.forEach(branch=>{
+const rect=branch.getBoundingClientRect();
+
+if(rect.top<trigger && rect.bottom>0){
+branch.classList.add("show");
+}else{
+branch.classList.remove("show");
+}
+});
+});
+
+/* LEAVES */
+
+function createLeaf(){
+const treeContainer=document.querySelector(".treeContainer");
+const rect=treeContainer.getBoundingClientRect();
+
+const leaf=document.createElement("img");
+leaf.src="leafs.gif";
+leaf.classList.add("leaf");
+
+const randomX=(Math.random()*100-50);
+const randomY=(Math.random()*200+50);
+
+leaf.style.left=(rect.left+rect.width/2+randomX)+"px";
+leaf.style.top=(rect.top+randomY)+"px";
+
+leaf.style.animationDuration=(3+Math.random()*5)+"s";
+leaf.style.opacity=.5+Math.random()*.5;
+
+document.body.appendChild(leaf);
+
+setTimeout(()=>{leaf.remove();},12000);
+}
+
+setInterval(createLeaf,150);
+
 /* HEART PARTICLES */
 
 const canvas=document.getElementById('heartCanvas');
 const ctx=canvas.getContext('2d');
 
+function resizeCanvas(){
 canvas.width=window.innerWidth;
 canvas.height=window.innerHeight;
+}
+
+resizeCanvas();
+window.addEventListener("resize",resizeCanvas);
 
 const mouse={x:canvas.width/2,y:canvas.height/2};
 
@@ -363,15 +458,19 @@ mouse.x=e.clientX;
 mouse.y=e.clientY;
 });
 
-/* TOUCH SUPPORT */
+/* TOUCH */
 
-window.addEventListener('touchmove',e=>{
-const touch=e.touches[0];
-mouse.x=touch.clientX;
-mouse.y=touch.clientY;
+window.addEventListener('touchstart',e=>{
+const t=e.touches[0];
+mouse.x=t.clientX;
+mouse.y=t.clientY;
 });
 
-/* PARTICLES */
+window.addEventListener('touchmove',e=>{
+const t=e.touches[0];
+mouse.x=t.clientX;
+mouse.y=t.clientY;
+});
 
 const particles=[];
 const particleCount=2000;
@@ -394,7 +493,6 @@ baseX:centerX+x*15,
 baseY:centerY-y*15,
 size:1.5+Math.random()*2
 });
-
 }
 
 function animate(){
@@ -417,15 +515,12 @@ p.x+=(p.baseX-p.x)*0.05;
 p.y+=(p.baseY-p.y)*0.05;
 
 ctx.fillStyle='#ff4da6';
-
 ctx.beginPath();
 ctx.arc(p.x,p.y,p.size,0,Math.PI*2);
 ctx.fill();
-
 }
 
 requestAnimationFrame(animate);
-
 }
 
 animate();
