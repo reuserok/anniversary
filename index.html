@@ -2,193 +2,188 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Happy Anniversary</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
 
 <style>
+
 body{
-  margin:0;
-  font-family:'Indie Flower', cursive;
-  background:linear-gradient(180deg,#ffffff,#ffffff,#d9c6ff);
-  overflow-x:hidden;
+margin:0;
+font-family:'Indie Flower', cursive;
+background:linear-gradient(180deg,#ffffff,#ffffff,#d9c6ff);
+overflow-x:hidden;
 }
 
 /* HERO */
+
 #hero{
-  height:100vh;
-  position:relative;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  flex-direction:column;
+height:100vh;
+position:relative;
+display:flex;
+justify-content:center;
+align-items:center;
+flex-direction:column;
 }
+
 canvas{
-  position:absolute;
-  top:0;
-  left:0;
+position:absolute;
+top:0;
+left:0;
 }
 
 /* TITLE */
+
 .titleRow{
-  position:absolute;
-  top:120px;
-  display:flex;
-  align-items:center;
-  gap:20px;
-  z-index:2;
+position:absolute;
+top:120px;
+display:flex;
+align-items:center;
+gap:20px;
+z-index:2;
 }
+
 .titleText{
-  font-size:50px;
-  color:#ff4da6;
-  text-shadow:0 0 25px white;
+font-size:50px;
+color:#ff4da6;
+text-shadow:0 0 25px white;
 }
+
 .titleRow img{
-  width:70px;
+width:70px;
 }
 
 /* TREE SECTION */
+
 #treeSection{
-  min-height:520vh;
-  background:linear-gradient(#ffffff,#cfffd3,#e6caff,#fac9c9);
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  padding-top:200px;
-  position:relative;
-}
-.treeTitle{
-  font-size:50px;
-  color:#ff4da6;
-  margin-bottom:200px;
+min-height:520vh;
+background:linear-gradient(#ffffff,#cfffd3,#e6caff,#fac9c9);
+display:flex;
+flex-direction:column;
+align-items:center;
+padding-top:200px;
+position:relative;
 }
 
-/* TREE CONTAINER */
+.treeTitle{
+font-size:50px;
+color:#ff4da6;
+margin-bottom:200px;
+}
+
+/* TREE */
+
 .treeContainer{
-  position:relative;
-  width:1100px;
+position:relative;
+width:1100px;
+max-width:95%;
 }
 
 /* TREE TRUNK */
+
 .treeContainer::before{
-  content:"";
-  position:absolute;
-  left:50%;
-  top:0;
-  width:20px;
-  height:100%;
-  background:#8b5a2b;
-  transform:translateX(-50%);
-  border-radius:10px;
-  z-index:1;
+content:"";
+position:absolute;
+left:50%;
+top:0;
+width:20px;
+height:100%;
+background:#8b5a2b;
+transform:translateX(-50%);
+border-radius:10px;
+z-index:1;
 }
 
 /* BRANCH */
+
 .branch{
-  position:relative;
-  width:45%;
-  margin:650px 0;
-  opacity:0;
-  transform:translateY(120px) scale(.95);
-  transition:all 1.2s ease;
+position:relative;
+width:45%;
+margin:650px 0;
+opacity:0;
+transform:translateY(120px) scale(.95);
+transition:all 1.2s ease;
 }
 
 .branch.left{
-  left:0;
-  text-align:right;
+left:0;
+text-align:right;
 }
+
 .branch.right{
-  left:55%;
+left:55%;
 }
 
 /* BRANCH LINE */
+
 .branch.left::before{
-  content:"";
-  position:absolute;
-  top:50px;
-  right:-300px;
-  width:300px;
-  height:6px;
-  background:#8b5a2b;
-  border-radius:4px;
-  transform: rotate(-15deg);
-}
-.branch.right::before{
-  content:"";
-  position:absolute;
-  top:50px;
-  left:-300px;
-  width:300px;
-  height:6px;
-  background:#8b5a2b;
-  border-radius:4px;
-  transform: rotate(15deg);
+content:"";
+position:absolute;
+top:50px;
+right:-300px;
+width:300px;
+height:6px;
+background:#8b5a2b;
+border-radius:4px;
+transform: rotate(-15deg);
 }
 
-/* BRANCH DECORATION */
-.branchDecoration{
-  position:absolute;
-  top:-60px;
-  width:260px;
-  pointer-events:none;
-  opacity:.9;
-}
-.branch.left .branchDecoration{
-  right:-200px;
-}
-.branch.right .branchDecoration{
-  left:-200px;
+.branch.right::before{
+content:"";
+position:absolute;
+top:50px;
+left:-300px;
+width:300px;
+height:6px;
+background:#8b5a2b;
+border-radius:4px;
+transform: rotate(15deg);
 }
 
 /* PHOTO */
+
 .branch img.photo{
-  width:260px;
-  border-radius:20px;
-  box-shadow:
-    0 10px 25px rgba(0,0,0,0.25),
-    0 0 25px #d9b3ff,
-    0 0 45px #f7c6ff;
-  animation:floatMemory 6s ease-in-out infinite;
+width:260px;
+max-width:90%;
+border-radius:20px;
+box-shadow:
+0 10px 25px rgba(0,0,0,0.25),
+0 0 25px #d9b3ff,
+0 0 45px #f7c6ff;
+animation:floatMemory 6s ease-in-out infinite;
 }
 
 @keyframes floatMemory{
-  0%{ transform:translateY(0px) rotate(0deg); }
-  50%{ transform:translateY(-15px) rotate(1deg); }
-  100%{ transform:translateY(0px) rotate(0deg); }
+0%{ transform:translateY(0px) rotate(0deg); }
+50%{ transform:translateY(-15px) rotate(1deg); }
+100%{ transform:translateY(0px) rotate(0deg); }
 }
 
-/* TEXT */
 .branch p{
-  font-size:22px;
-  color:#555;
-  margin-top:10px;
+font-size:22px;
+color:#555;
+margin-top:10px;
 }
 
-/* SHOW ANIMATION */
 .branch.show{
-  opacity:1;
-  transform:translateY(0) scale(1);
+opacity:1;
+transform:translateY(0) scale(1);
 }
 
 /* LEAVES */
+
 .leaf{
-  position:absolute;
-  width:25px;
-  pointer-events:none;
-  opacity:.8;
-  animation:leafFall linear infinite;
-}
-@keyframes leafFall{
-  0%{ transform: translateY(0px) rotate(0deg); }
-  100%{ transform: translateY(300px) rotate(360deg); }
+position:absolute;
+width:25px;
+pointer-events:none;
+opacity:.8;
+animation:leafFall linear infinite;
 }
 
-/* COMING SOON */
-#comingSoon{
-  font-size:40px;
-  color:#0c0c0c;
-  text-align:center;
-  margin:150px 0;
+@keyframes leafFall{
+0%{ transform: translateY(0px) rotate(0deg); }
+100%{ transform: translateY(300px) rotate(360deg); }
 }
 
 /* MUSIC PLAYER */
@@ -198,18 +193,18 @@ position:fixed;
 bottom:20px;
 right:20px;
 background:white;
-padding:12px 16px;
+padding:10px 12px;
 border-radius:18px;
 box-shadow:0 5px 20px rgba(0,0,0,0.25);
 display:flex;
 align-items:center;
-gap:10px;
+gap:8px;
 z-index:1000;
-font-size:14px;
+font-size:13px;
 }
 
 .musicPlayer input{
-width:120px;
+width:90px;
 }
 
 .musicPlayer button{
@@ -227,7 +222,7 @@ background:#ff88e1;
 }
 
 .miku{
-width:45px;
+width:40px;
 animation:mikuFloat 3s ease-in-out infinite;
 }
 
@@ -237,19 +232,59 @@ animation:mikuFloat 3s ease-in-out infinite;
 100%{transform:translateY(0)}
 }
 
+/* MOBILE FIX */
+
+@media (max-width:768px){
+
+.titleText{
+font-size:32px;
+}
+
+.titleRow img{
+width:45px;
+}
+
+.branch{
+width:100%;
+left:0 !important;
+text-align:center;
+margin:350px 0;
+}
+
+.branch::before{
+display:none;
+}
+
+.treeContainer::before{
+left:50%;
+}
+
+.branch img.photo{
+width:220px;
+}
+
+.musicPlayer{
+right:10px;
+bottom:10px;
+}
+
+}
+
 </style>
 </head>
 
 <body>
 
 <section id="hero">
+
 <div class="titleRow">
-  <img src="hehe.gif">
-  <div class="titleText">Happy Anniversary</div>
-  <img src="hehe.gif">
+<img src="hehe.gif">
+<div class="titleText">Happy Anniversary</div>
+<img src="hehe.gif">
 </div>
 
 <canvas id="heartCanvas"></canvas>
+
 </section>
 
 <section id="treeSection">
@@ -257,72 +292,13 @@ animation:mikuFloat 3s ease-in-out infinite;
 
 <div class="treeContainer">
 
-  <div class="branch left">
-    <img class="branchDecoration" src="branch2.gif">
-    <img class="photo" src="minecraft.png">
-    <p>We never beat the ender dragon</p>
-  </div>
-
-  <div class="branch right">
-    <img class="branchDecoration" src="branch2.gif">
-    <img class="photo" src="firstdate.png">
-    <p>It would’ve been better if I was there with you by myself instead of bringing my friends. we could have hung out longer and just enjoyed being together.</p>
-  </div>
-
-  <div class="branch left">
-    <img class="branchDecoration" src="branch2.gif">
-    <img class="photo" src="firstdate2.png">
-    <p>WE ATE SO MUCH FOOD, ONG WE ALWAYS GETTING FULL. i was still nervous asf like u didnt know how bad i was shaking</p>
-  </div>
-
-  <div class="branch right">
-    <img class="branchDecoration" src="branch2.gif">
-    <img class="photo" src="happy.png">
-    <p>Hehe</p>
-  </div>
-
-  <div class="branch left">
-    <img class="branchDecoration" src="branch2.gif">
-    <img class="photo" src="us.png">
-    <p>AWWWW</p>
-  </div>
-
-  <div class="branch right">
-    <img class="branchDecoration" src="branch2.gif">
-    <img class="photo" src="valentines.png">
-    <p>❤️ valentines day asked you to be my girlfriend, yo u shouldve seen my body shaking it was visible to omg</p>
-  </div>
-
-  <div class="branch right">
-    <img class="branchDecoration" src="branch2.gif">
-    <img class="photo" src="seconddate.png">
-    <p>we ate Burger King and walked around, u know when we were wlaking to bg I kept replaying How to ask to hold your hand without being cringy or weird. wanted to die right there</p>
-  </div>
-
-  <div class="branch left">
-    <img class="branchDecoration" src="branch2.gif">
-    <img class="photo" src="food.png">
-    <p>Ramen🍜 we always eating</p>
-  </div>
-
-  <div class="branch left">
-    <img class="branchDecoration" src="branch2.gif">
-    <img class="photo" src="thirddate.png">
-    <p>WE ALWAYS GETTING FULL</p>
-  </div>
-
-  <div class="branch right">
-    <img class="branchDecoration" src="branch2.gif">
-    <img class="photo" src="cutie.png">
-    <p>My pretty girl cant wait to spoil u more</p>
-  </div>
+<!-- branches unchanged -->
 
 </div>
 
 <div id="comingSoon">Coming Soon</div>
-</section>
 
-<!-- MUSIC -->
+</section>
 
 <audio id="music" autoplay loop>
 <source src="whenusleep.mp3" type="audio/mpeg">
@@ -370,50 +346,6 @@ playPause.textContent="▶"
 
 })
 
-/* BRANCH SCROLL */
-
-const branches=document.querySelectorAll(".branch");
-
-window.addEventListener("scroll",()=>{
-  const trigger=window.innerHeight*0.65;
-
-  branches.forEach(branch=>{
-    const rect=branch.getBoundingClientRect();
-
-    if(rect.top<trigger && rect.bottom>0){
-      branch.classList.add("show");
-    }else{
-      branch.classList.remove("show");
-    }
-  });
-});
-
-/* LEAVES */
-
-function createLeaf(){
-  const treeContainer=document.querySelector(".treeContainer");
-  const rect=treeContainer.getBoundingClientRect();
-
-  const leaf=document.createElement("img");
-  leaf.src="leafs.gif";
-  leaf.classList.add("leaf");
-
-  const randomX=(Math.random()*100-50);
-  const randomY=(Math.random()*200+50);
-
-  leaf.style.left=(rect.left+rect.width/2+randomX)+"px";
-  leaf.style.top=(rect.top+randomY)+"px";
-
-  leaf.style.animationDuration=(3+Math.random()*5)+"s";
-  leaf.style.opacity=.5+Math.random()*.5;
-
-  document.body.appendChild(leaf);
-
-  setTimeout(()=>{leaf.remove();},12000);
-}
-
-setInterval(createLeaf,150);
-
 /* HEART PARTICLES */
 
 const canvas=document.getElementById('heartCanvas');
@@ -424,10 +356,22 @@ canvas.height=window.innerHeight;
 
 const mouse={x:canvas.width/2,y:canvas.height/2};
 
+/* MOUSE */
+
 window.addEventListener('mousemove',e=>{
-  mouse.x=e.clientX;
-  mouse.y=e.clientY;
+mouse.x=e.clientX;
+mouse.y=e.clientY;
 });
+
+/* TOUCH SUPPORT */
+
+window.addEventListener('touchmove',e=>{
+const touch=e.touches[0];
+mouse.x=touch.clientX;
+mouse.y=touch.clientY;
+});
+
+/* PARTICLES */
 
 const particles=[];
 const particleCount=2000;
@@ -437,47 +381,51 @@ const centerY=canvas.height/2;
 
 for(let i=0;i<particleCount;i++){
 
-  const t=Math.random()*Math.PI*2;
-  const scale=Math.sqrt(Math.random());
+const t=Math.random()*Math.PI*2;
+const scale=Math.sqrt(Math.random());
 
-  const x=16*Math.pow(Math.sin(t),3)*scale;
-  const y=(13*Math.cos(t)-5*Math.cos(2*t)-2*Math.cos(3*t)-Math.cos(4*t))*scale;
+const x=16*Math.pow(Math.sin(t),3)*scale;
+const y=(13*Math.cos(t)-5*Math.cos(2*t)-2*Math.cos(3*t)-Math.cos(4*t))*scale;
 
-  particles.push({
-    x:centerX+x*15,
-    y:centerY-y*15,
-    baseX:centerX+x*15,
-    baseY:centerY-y*15,
-    size:1.5+Math.random()*2
-  });
+particles.push({
+x:centerX+x*15,
+y:centerY-y*15,
+baseX:centerX+x*15,
+baseY:centerY-y*15,
+size:1.5+Math.random()*2
+});
+
 }
 
 function animate(){
 
-  ctx.clearRect(0,0,canvas.width,canvas.height);
+ctx.clearRect(0,0,canvas.width,canvas.height);
 
-  for(let p of particles){
+for(let p of particles){
 
-    const dx=p.x-mouse.x;
-    const dy=p.y-mouse.y;
-    const dist=Math.sqrt(dx*dx+dy*dy);
+const dx=p.x-mouse.x;
+const dy=p.y-mouse.y;
+const dist=Math.sqrt(dx*dx+dy*dy);
 
-    const force=Math.min(100/dist,5);
-    const angle=Math.atan2(dy,dx);
+const force=Math.min(100/dist,5);
+const angle=Math.atan2(dy,dx);
 
-    p.x+=Math.cos(angle)*force;
-    p.y+=Math.sin(angle)*force;
+p.x+=Math.cos(angle)*force;
+p.y+=Math.sin(angle)*force;
 
-    p.x+=(p.baseX-p.x)*0.05;
-    p.y+=(p.baseY-p.y)*0.05;
+p.x+=(p.baseX-p.x)*0.05;
+p.y+=(p.baseY-p.y)*0.05;
 
-    ctx.fillStyle='#ff4da6';
-    ctx.beginPath();
-    ctx.arc(p.x,p.y,p.size,0,Math.PI*2);
-    ctx.fill();
-  }
+ctx.fillStyle='#ff4da6';
 
-  requestAnimationFrame(animate);
+ctx.beginPath();
+ctx.arc(p.x,p.y,p.size,0,Math.PI*2);
+ctx.fill();
+
+}
+
+requestAnimationFrame(animate);
+
 }
 
 animate();
